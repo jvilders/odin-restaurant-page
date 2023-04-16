@@ -51,6 +51,7 @@ ul {
 /* Homepage */
 .homepage-main {
   background-color: var(--main-bg-color);
+  padding: 1rem;
 
   display: grid;
   grid-template: repeat(4, 200px) / repeat(4, 1fr);
@@ -129,4 +130,95 @@ ul {
   );
   background-position: 50% 10%;
   filter: opacity(20%);
+}
+
+/* Menu page */
+.menu-main {
+  background-color: var(--main-bg-color);
+  border: 2px solid black;
+  margin-block: 1rem;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "restaurant-name restaurant-name"
+    "entrees entrees"
+    "mains mains"
+    "desserts drinks";
+}
+
+.menu-name {
+  text-align: center;
+  font-size: 3rem;
+  margin-block: 1rem;
+}
+
+.span2 {
+  grid-column: span 2;
+}
+
+.menu-header {
+  text-align: center;
+  background-color: black;
+  color: white;
+  text-transform: capitalize;
+  font-size: 2rem;
+}
+
+.menu-item {
+  margin: 1rem;
+  border-bottom: 2px solid black;
+
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: auto 1fr;
+}
+
+.menu-item__name {
+  font-style: italic;
+  margin-bottom: 0.5rem;
+}
+
+.menu-name {
+  grid-area: restaurant-name;
+}
+
+.entrees {
+  grid-area: entrees;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.mains {
+  grid-area: mains;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.desserts {
+  grid-area: desserts;
+
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.drinks {
+  grid-area: drinks;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  /* Without this the vertical space is distributed equally for some reason */
+  align-content: start;
+}
+
+.drink-item {
+  display: flex;
+  margin: 1rem;
+}
+
+.drink-item__filler {
+  border-bottom: 2px dotted black;
+  flex-grow: 1;
 }
