@@ -4,6 +4,12 @@
   box-sizing: border-box;
 }
 
+img,
+svg {
+  display: block;
+  width: 100%;
+}
+
 :root {
   --max-width: 1200px;
   --bg-color: rgb(238, 238, 238);
@@ -221,4 +227,126 @@ ul {
 .drink-item__filler {
   border-bottom: 2px dotted black;
   flex-grow: 1;
+}
+
+/* Contact page */
+.contact-main {
+  background-color: var(--main-bg-color);
+  padding: 1rem;
+}
+
+.contact-main h2 {
+  text-align: center;
+}
+
+.staff-cards {
+  justify-content: center;
+  gap: 0.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.staff-card {
+  border: 1px solid black;
+  /* width: 300px; */
+  padding: 0.5rem;
+
+  display: grid;
+  grid-template-areas:
+    "image name"
+    "image title"
+    "blurb blurb";
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto auto 1fr;
+  gap: 0.5rem;
+
+  box-shadow: 2px 2px black;
+}
+
+.staff-image {
+  grid-area: image;
+  place-self: center;
+
+  border-radius: 1000px;
+  overflow: hidden;
+  border: 1px solid black;
+}
+
+.staff-name {
+  grid-area: name;
+  align-self: end;
+  font-weight: bold;
+}
+
+.staff-title {
+  grid-area: title;
+  align-self: start;
+}
+
+.staff-blurb {
+  grid-area: blurb;
+}
+
+.staff-opening {
+  border: 1px dashed black;
+  padding: 1rem;
+
+  display: grid;
+  text-align: center;
+  place-content: center;
+}
+
+.staff-opening > span {
+  text-transform: capitalize;
+  font-weight: bold;
+}
+
+/*  */
+.info-boxes {
+  display: grid;
+  row-gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.hour-grid {
+  display: grid;
+  padding: 1rem;
+  gap: 1.5rem 0.5rem;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+}
+
+.hours-graph {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.hour {
+  position: relative;
+  flex-grow: 1;
+}
+
+.open {
+  height: 8px;
+  background-color: black;
+}
+
+.closed {
+  height: 2px;
+  background-color: gray;
+}
+
+.hour.open + .hour.closed::before {
+  content: attr(data-hour);
+  position: absolute;
+  top: 200%;
+  left: -50%;
+}
+
+.hour.closed + .hour.open::before {
+  content: attr(data-hour);
+  position: absolute;
+  top: -200%;
+  left: -50%;
 }
