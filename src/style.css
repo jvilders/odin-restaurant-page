@@ -13,7 +13,7 @@ svg {
 :root {
   --max-width: 1200px;
   --bg-color: rgb(238, 238, 238);
-  --header-bg-color: rgb(255, 228, 207);
+  --header-bg-color: rgb(255, 255, 255);
   --main-bg-color: white;
 }
 
@@ -30,7 +30,9 @@ html {
 }
 
 header {
+  font-size: 2rem;
   background-color: var(--header-bg-color);
+  border-bottom: 2px solid black;
 }
 
 nav {
@@ -52,6 +54,17 @@ ul {
 .page-buttons {
   display: flex;
   gap: 1rem;
+  align-self: stretch;
+}
+
+.page-buttons a {
+  display: flex;
+  align-items: center;
+
+  text-decoration-line: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: black;
 }
 
 /* Homepage */
@@ -237,11 +250,13 @@ ul {
 
 .contact-main h2 {
   text-align: center;
+  margin-bottom: 1rem;
 }
 
 .staff-cards {
   justify-content: center;
   gap: 0.5rem;
+  margin-bottom: 1rem;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
@@ -266,10 +281,9 @@ ul {
 .staff-image {
   grid-area: image;
   place-self: center;
+  width: 75px;
 
-  border-radius: 1000px;
   overflow: hidden;
-  border: 1px solid black;
 }
 
 .staff-name {
@@ -340,13 +354,47 @@ ul {
 .hour.open + .hour.closed::before {
   content: attr(data-hour);
   position: absolute;
-  top: 200%;
+  top: 250%;
   left: -50%;
 }
 
 .hour.closed + .hour.open::before {
   content: attr(data-hour);
   position: absolute;
-  top: -200%;
+  top: -250%;
   left: -50%;
+}
+
+.contact-information {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-grid {
+  display: grid;
+  gap: 1rem;
+  padding: 1rem;
+  align-items: center;
+  grid-template-columns: auto 1fr;
+}
+
+.contact-icon {
+  width: 40px;
+}
+
+.wrap-grid {
+  flex-grow: 1;
+  display: grid;
+  place-content: center;
+}
+
+/* color idea */
+.info-boxes {
+  border: 1px solid black;
+}
+
+.contact-information {
+  color: white;
+  fill: white;
+  background-color: black;
 }
