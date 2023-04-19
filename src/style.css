@@ -43,6 +43,7 @@ ul {
   list-style: none;
 
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 2rem;
 }
@@ -59,6 +60,7 @@ ul {
 
 .page-buttons a {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
 
   text-decoration-line: none;
@@ -93,8 +95,8 @@ ul {
 .homepage-title {
   font-size: 3rem;
   grid-area: 1 / 2 / 2 / 4;
-  background-color: white;
-
+  background-color: rgb(0, 0, 0);
+  color: white;
   display: grid;
   place-content: center;
   z-index: 4;
@@ -121,7 +123,8 @@ ul {
   display: grid;
   place-content: center;
   z-index: 4;
-  background-color: white;
+  background-color: rgb(0, 0, 0);
+  color: white;
 }
 
 .homepage-image-wrapper {
@@ -145,7 +148,7 @@ ul {
     #535353,
     #535353 5px,
     #eee 20px,
-    #eee 50px
+    #eee 100px
   );
   background-position: 50% 10%;
   filter: opacity(20%);
@@ -154,8 +157,7 @@ ul {
 /* Menu page */
 .menu-main {
   background-color: var(--main-bg-color);
-  border: 2px solid black;
-  margin-block: 1rem;
+  padding: 1rem;
 
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -250,7 +252,7 @@ ul {
 
 .contact-main h2 {
   text-align: center;
-  margin-bottom: 1rem;
+  margin-block: 1rem;
 }
 
 .staff-cards {
